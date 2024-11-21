@@ -278,5 +278,18 @@ const updateScreen = () => {
       // We don't need to return anything from this module because everything is encapsulated inside this screen controller.
     
     }
-
+    const StartGame = (function () {
+        const startButton = document.querySelector('.start')
+      
+        startButton.addEventListener('click', function () {
+          document.querySelectorAll('.cell').textContent = ''
+          Gameboard().getBoard().forEach((item) => item.pop())
+      
+          ScreenController()
+          document.querySelector('#player1').value = ''
+          document.querySelector('#player2').value = ''
+      
+          document.querySelectorAll('.cell')
+        })
+      })()
   
