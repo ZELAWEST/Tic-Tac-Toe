@@ -129,3 +129,14 @@ const Gameboard = function () {
     console.log(`${getActivePlayer().getName()}'s turn.`);
   }
 }
+const playRound = (column) => {
+
+    let boardCell = getCellsArray()[column]
+    console.log(boardCell)
+    console.log(
+      `Dropping ${getActivePlayer().name}'s token into column ${column}...`
+    );
+
+    board.dropToken(boardCell[0], boardCell[1], getActivePlayer().getToken());
+
+  }
