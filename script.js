@@ -70,3 +70,24 @@ const Gameboard = function () {
       getToken
     }
   }
+  const GameController = function () {
+
+
+    const winnerMessage = document.getElementById('massage')
+    const modal = document.getElementById('winnerDialog')
+    const closeModalBUtton = document.getElementById('close')
+    const playerName = document.getElementById('playerName')
+    const playerOne = document.querySelector('#player1')
+    const playerTwo = document.querySelector('#player2')
+  
+    const winner = [
+      [[0, 0], [0, 1], [0, 2]],
+      [[1, 0], [1, 1], [1, 2]],
+      [[2, 0], [2, 1], [2, 2]],
+      [[0, 0], [1, 1], [2, 2]],
+      [[0, 2], [1, 1], [2, 0]],
+      [[0, 0], [1, 0], [2, 0]],
+      [[0, 1], [1, 1], [2, 1]],
+      [[0, 2], [1, 2], [2, 2]]
+    ]
+}
