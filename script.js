@@ -207,5 +207,41 @@ const playRound = (column) => {
   }
 }
 const ScreenController = function () {
-    
+    let { playRound, getActivePlayer, getBoard, showWinnerDialog } = GameController()
+
+
+    let activePlayer = ''
+  
+    const playerTurnDiv = document.querySelector('.current')
+    const boardDiv = document.querySelector('.board')
+  
 }
+const updateScreen = () => {
+    // clear the board
+    boardDiv.textContent = "";
+
+    // get the newest version of the board and player turn
+    const board = getBoard()
+    activePlayer = getActivePlayer();
+
+    // Display player's turn
+    playerTurnDiv.textContent = `${activePlayer.getName()}'s turn...`
+
+    // Render board squares
+    let index = 0
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        const cellButton = document.createElement("button");
+        cellButton.setAttribute('id', index++)
+        cellButton.setAttribute('class', 'button')
+        cellButton.style.setProperty('--shadowColor', getRandomColor())
+        cellButton.classList.add("cell");
+        let text = board[i][j]
+
+        cellButton.textContent = text.getValue()
+        boardDiv.appendChild(cellButton)
+      }
+
+    }
+
+  }
