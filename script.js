@@ -140,3 +140,34 @@ const playRound = (column) => {
     board.dropToken(boardCell[0], boardCell[1], getActivePlayer().getToken());
 
   }
+  const checkTie = function (currentPlayer, theBoard) {
+    playerName.textContent = ''
+    for (let i = 0; i < winner.length; i++) {
+      const [a, b, c] = winner[i]
+
+      if ((theBoard[a[0]][a[1]].getValue() !== currentPlayer.getToken() || theBoard[a[0]][a[1]].getValue() === '') &&
+        (theBoard[b[0]][b[1]].getValue() !== currentPlayer.getToken() || theBoard[a[0]][a[1]].getValue() === '') &&
+        (theBoard[c[0]][c[1]].getValue() !== currentPlayer.getToken() || theBoard[a[0]][a[1]].getValue() === '')) {
+        return false
+      }
+    }
+    return true
+  }
+  const checkWinner = function (currentPlayer, theBoard) {
+    for (let i = 0; i < winner.length - 1; i++) {
+      const [a, b, c] = winner[i]
+
+
+      if (theBoard[a[0]][a[1]].getValue() === currentPlayer.getToken() &&
+        theBoard[b[0]][b[1]].getValue() === currentPlayer.getToken() &&
+        theBoard[c[0]][c[1]].getValue() === currentPlayer.getToken()) {
+
+        getActivePlayer().setToken('')
+        switchPlayerTurn()
+        getActivePlayer().setToken('')
+
+        return true
+      }
+    }
+    return false
+  }
