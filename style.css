@@ -14,3 +14,33 @@
     font-family: 'Roboto'
 
 }
+:root {
+    --shadowColor: blue;
+    --color: #fff;
+    --margin-bottom: 10px;
+    --border-radius: 6px;
+}
+
+body {
+
+    height: 100vh;
+    width: 960px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.board-container {
+    display: grid;
+    height: 70%;
+    width: 30%;
+    grid-template-columns: repeat(2, 0.8fr);
+    grid-template-rows: 0.9fr 0.5fr 3fr 0.5fr;
+    place-items: center;
+    border: solid rgb(24, 168, 234) 2px;
+    padding: 8px;
+    border-radius: var(--border-radius);
+    align-content: start;
+}
