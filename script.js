@@ -32,3 +32,41 @@ const Gameboard = function () {
       dropToken
     }
   }
+  const Cell = function () {
+    let value = ''
+    const addToken = function (player) {
+      value = player
+    }
+    const getValue = function () {
+      return value
+    }
+    return {
+      addToken,
+      getValue
+    }
+  }
+  const Players = function () {
+    let name = ''
+    let token = 0
+  
+    const setName = function (playername) {
+      name = playername
+  
+    }
+    const getName = function () {
+      return name
+    }
+    const setToken = function (playertoken) {
+      token = playertoken
+    }
+    const getToken = function () {
+      return token
+    }
+  
+    return {
+      setName,
+      getName,
+      setToken,
+      getToken
+    }
+  }
