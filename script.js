@@ -119,12 +119,12 @@ const Gameboard = function () {
 
     let activePlayer = players[0];
 
-  const switchPlayerTurn = () => {
+  const switchPlayerTurn = function(){
     activePlayer = activePlayer === players[0] ? players[1] : players[0];
   }
-  const getActivePlayer = () => activePlayer;
+  const getActivePlayer = function(){ activePlayer};
 
-  const printNewRound = () => {
+  const printNewRound = function() {
     board.printBoard();
     console.log(`${getActivePlayer().getName()}'s turn.`);
   }
@@ -193,4 +193,19 @@ const playRound = (column) => {
     closeModalBUtton.addEventListener('click', () => {
       modal.close()
     })
+  
+  printNewRound();
+
+  return {
+    playRound,
+    getActivePlayer,
+    getBoard: board.getBoard,
+    getCellsArray,
+    checkTie,
+    checkWinner,
+    showWinnerDialog
   }
+}
+const ScreenController = function () {
+    
+}
