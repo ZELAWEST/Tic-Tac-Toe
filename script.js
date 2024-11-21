@@ -90,4 +90,30 @@ const Gameboard = function () {
       [[0, 1], [1, 1], [2, 1]],
       [[0, 2], [1, 2], [2, 2]]
     ]
+    const board = Gameboard();
+
+
+    const player1 = Players();
+    const player2 = Players();
+  
+  
+    player1.setName(playerOne.value)
+    player1.setToken('X')
+    player2.setName(playerTwo.value)
+    player2.setToken('O')
+  
+    const players = [player1, player2]
+    const getCellsArray = function () {
+      let cells = []
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+  
+  
+          cells.push(winner[i][j])
+  
+        }
+  
+      }
+      return cells
+    }
 }
