@@ -171,3 +171,26 @@ const playRound = (column) => {
     }
     return false
   }
+  const showWinnerDialog = function () {
+
+    if (checkWinner(getActivePlayer(), board.getBoard())) {
+
+      switchPlayerTurn()
+      console.log(winnerMessage)
+      winnerMessage.textContent = `The winner of the game is `
+      playerName.textContent = ` ${getActivePlayer().getName()}`
+      modal.showModal()
+      return true
+    } else if (checkTie(getActivePlayer(), board.getBoard())) {
+
+      winnerMessage.textContent = `The game ends in a draw`
+      modal.showModal()
+      return true
+    } else {
+      switchPlayerTurn()
+    }
+    printNewRound()
+    closeModalBUtton.addEventListener('click', () => {
+      modal.close()
+    })
+  }
