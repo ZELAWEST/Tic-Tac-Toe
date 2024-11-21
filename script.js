@@ -243,5 +243,40 @@ const updateScreen = () => {
       }
 
     }
+    const getRandomColor = function () {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+      // Add event listener for the board
+      function clickHandlerBoard(e) {
+        const selectedColumn = e.target.id;
+        // Make sure I've clicked a column and not the gaps in between
+        if (!selectedColumn) return;
+    
+        playRound(selectedColumn);
+    
+    
+        if (showWinnerDialog()) {
+          boardDiv.removeEventListener('click', clickHandlerBoard, false)
+        }
+    
+    
+    
+        updateScreen();
+      }
+      boardDiv.addEventListener("click", clickHandlerBoard);
+    
+      // Initial render
+      updateScreen();
+    
+    
+    
+      // We don't need to return anything from this module because everything is encapsulated inside this screen controller.
+    
+    }
 
-  }
+  
