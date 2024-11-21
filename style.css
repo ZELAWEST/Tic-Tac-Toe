@@ -134,7 +134,7 @@ body {
     height: 100%;
     grid-column: 1 / 3;
     grid-row: 2 / 3;
-    /* margin: 0 auto; */
+    
 
 
     display: grid;
@@ -144,4 +144,74 @@ body {
 
     margin-bottom: var(--margin-bottom);
 
+}
+.header .header-top input {
+    width: 100%;
+    border: none;
+    height: 1.5rem;
+    padding: 0.6rem;
+    border-radius: 0.3rem;
+
+}
+
+.board-container .header-top {
+    grid-column: 1;
+    grid-row: 1 / 2;
+    color: var(--color);
+    width: 100%;
+
+    display: flex;
+
+    background-color: rgb(24, 168, 234);
+    border-radius: var(--border-radius);
+
+
+}
+
+.header-top .player1 , .header-top .player2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.7rem;
+    padding: 0.2rem;
+}
+
+
+
+.header .header-top label {
+    width: 50%;
+    text-align: center;
+
+}
+
+.header .header-top input {
+    width: 80%;
+   
+}
+
+
+
+.board-container .header-bottom {
+    grid-column: 1;
+    grid-row: 2 / 3;
+    margin-top: 12px;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    background-color: blueviolet;
+    border-radius: var(--border-radius);
+    color: #fff;
+}
+
+.header-bottom h4 {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+   
 }
