@@ -305,10 +305,10 @@ const screenController = (function () {
 
 
 
-  // We don't need to return anything from this module because everything is encapsulated inside this screen controller.
+  
   return {
     returnCellDiv,
-    clickHandlerBoard
+    
   }
 })()
 const StartGame = (function () {
@@ -353,5 +353,5 @@ const StartGame = (function () {
 
 
   })
-  
+
 })()
