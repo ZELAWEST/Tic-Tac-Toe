@@ -160,7 +160,7 @@ const gameController = (function () {
 
   //check for a win
   const checkWinner = function (currentPlayer, theBoard) {
-    for (let i = 0; i < winner.length - 1; i++) {
+    for (let i = 0; i < winner.length; i++) {
       const [a, b, c] = winner[i]
 
 
